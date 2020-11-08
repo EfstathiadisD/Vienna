@@ -27,9 +27,9 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,md}": [
-      "yarn nx affected --target=lint --uncommitted --parallel --fix",
-      "yarn nx affected --target=format:write --uncommitted --parallel",
-      "yarn nx affected --target=test --uncommitted --parallel --maxParallel=5"
+      "yarn nx affected:lint --uncommitted --parallel --fix",
+      "yarn nx format:write --affected --uncommitted --parallel",
+      "yarn nx test --affected --uncommitted --parallel --maxParallel=5"
     ]
   },
   "husky": {

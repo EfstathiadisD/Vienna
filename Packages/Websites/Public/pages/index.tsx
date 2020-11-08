@@ -194,7 +194,6 @@ nx g @nrwl/react:lib ui
 nx g @nrwl/react:component xyz --project ui`}</pre>
       </details>
       <details>
-
         <summary>View dependency graph write now</summary>
         <pre>{`nx dep-graph`}</pre>
       </details>
