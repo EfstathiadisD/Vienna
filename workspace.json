@@ -1,0 +1,154 @@
+{
+  "version": 1,
+  "projects": {
+    "Payments.Frontend": {
+      "root": "Packages/Payments/Frontend",
+      "sourceRoot": "Packages/Payments/Frontend/src",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/web:build",
+          "options": {
+            "outputPath": "dist/Packages/Payments/Frontend",
+            "index": "Packages/Payments/Frontend/src/index.html",
+            "main": "Packages/Payments/Frontend/src/main.tsx",
+            "polyfills": "Packages/Payments/Frontend/src/polyfills.ts",
+            "tsConfig": "Packages/Payments/Frontend/tsconfig.app.json",
+            "assets": [
+              "Packages/Payments/Frontend/src/favicon.ico",
+              "Packages/Payments/Frontend/src/assets"
+            ],
+            "styles": [],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "Packages/Payments/Frontend/src/environments/environment.ts",
+                  "with": "Packages/Payments/Frontend/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "Payments.Frontend:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "Payments.Frontend:build:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["Packages/Payments/Frontend/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "Packages/Payments/Frontend/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "Websites.Public": {
+      "root": "Packages/websites/Public",
+      "sourceRoot": "Packages/Websites/public",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/next:build",
+          "options": {
+            "root": "Packages/Websites/Public",
+            "outputPath": "dist/Packages/Websites/Public"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/next:server",
+          "options": {
+            "buildTarget": "Websites.Public:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "Websites.Public:build:production",
+              "dev": false
+            }
+          }
+        },
+        "export": {
+          "builder": "@nrwl/next:export",
+          "options": {
+            "buildTarget": "Websites.Public:build:production"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["Packages/Websites/Public/**/*.{ts,tsx}"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "Packages/Websites/Public/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/react"
+  },
+  "schematics": {
+    "@nrwl/react": {
+      "application": {
+        "style": "@emotion/styled",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "@emotion/styled"
+      },
+      "library": {
+        "style": "@emotion/styled",
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "@emotion/styled",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "Payments.Frontend"
+}
