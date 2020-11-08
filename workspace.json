@@ -15,10 +15,7 @@
             "main": "Packages/Payments/Frontend/src/main.tsx",
             "polyfills": "Packages/Payments/Frontend/src/polyfills.ts",
             "tsConfig": "Packages/Payments/Frontend/tsconfig.app.json",
-            "assets": [
-              "Packages/Payments/Frontend/src/favicon.ico",
-              "Packages/Payments/Frontend/src/assets"
-            ],
+            "assets": ["Packages/Payments/Frontend/src/assets"],
             "styles": [],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack"
@@ -51,7 +48,8 @@
         "serve": {
           "builder": "@nrwl/web:dev-server",
           "options": {
-            "buildTarget": "Payments.Frontend:build"
+            "buildTarget": "Payments.Frontend:build",
+            "port": 3060
           },
           "configurations": {
             "production": {
@@ -94,6 +92,7 @@
           "builder": "@nrwl/next:server",
           "options": {
             "buildTarget": "Websites.Public:build",
+            "port": 3030,
             "dev": true
           },
           "configurations": {

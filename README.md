@@ -2,36 +2,37 @@
 
 Vienna is an example Application, that demonstrates the effects and capabilities of Nx. We will use Nx, to create:
 
-|Types                                                    | Number    | Status |
-|---------------------------------------------------------|-----------|--------|
-|React Application                                        | 2         | ✅     |
-|React Libraries                                          | 1         | ✅     |
-|Typescript Libraries                                     | 1         | ✅     |
-|NextJS Website                                           | 2         | ✅     |
-|NestJS Backend                                           | 1         | ✅     |
-|Golang Backend                                           | 1         | ✅     |
-|Kotlin Backend                                           | 1         | ⚠️     |
+| Types                | Number | Status |
+| -------------------- | ------ | ------ |
+| React Application    | 2      | ⚠️     |
+| React Libraries      | 1      | ✅     |
+| Typescript Libraries | 1      | ✅     |
+| NextJS Website       | 2      | ✅     |
+| NestJS Backend       | 1      | ✅     |
+| Golang Backend       | 1      | ✅     |
+| Kotlin Backend       | 1      | ⚠️     |
 
 On top of that we will create some custom schematics, which will allow us to create Applications and Libraries exactly
 the way we want to.
 
 ## Git Workflow
+
 On each Git Commit, we do the following. Meaning, that following a normal git workflow, of `git add .` and `git commit -m ""`",
 the following actions will be triggered:
 
- - Lint the affected branches in parallel.
- - Format the affected branches in parallel
- - Test the affected branches with a max parallelization of 5.
- 
- Keep in mind that we are using `commitlint`, with some custom `Rules` and `Plugins`. That restrics our Commit Messages.
- Here you can find a few examples, of GOOD vs BAD Commits:
+- Lint the affected branches in parallel.
+- Format the affected branches in parallel
+- Test the affected branches with a max parallelization of 5.
 
-|Commit Messages                                          | Status    |
-|---------------------------------------------------------|-----------|
-|feat(PACKAGES): VIENNA-001/ FIX AN ISSUE                 | ✅        |
-|fix(BUILD): VIENNA-001/ FIX AN ISSUE                     | ✅        |
-|feat(packages): VIENNA-001: Fix an issue                 | ⛔        |
-|fix(build): VIENNA-001/ Fix an issue                     | ⛔        |
+Keep in mind that we are using `commitlint`, with some custom `Rules` and `Plugins`. That restrics our Commit Messages.
+Here you can find a few examples, of GOOD vs BAD Commits:
+
+| Commit Messages                          | Status |
+| ---------------------------------------- | ------ |
+| feat(PACKAGES): VIENNA-001/ FIX AN ISSUE | ✅     |
+| fix(BUILD): VIENNA-001/ FIX AN ISSUE     | ✅     |
+| feat(packages): VIENNA-001: Fix an issue | ⛔     |
+| fix(build): VIENNA-001/ Fix an issue     | ⛔     |
 
 ## Workspace Layout
 
