@@ -122,6 +122,107 @@
           }
         }
       }
+    },
+    "Frontend.Components": {
+      "root": "Libraries/Frontend/Components",
+      "sourceRoot": "Libraries/Frontend/Components/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["Libraries/Frontend/Components/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "build": {
+          "builder": "@nrwl/web:package",
+          "options": {
+            "outputPath": "dist/Libraries/Frontend/Components",
+            "tsConfig": "Libraries/Frontend/Components/tsconfig.lib.json",
+            "project": "Libraries/Frontend/Components/package.json",
+            "entryFile": "Libraries/Frontend/Components/src/index.ts",
+            "external": ["react", "react-dom", "@emotion/styled", "@emotion/core"],
+            "babelConfig": "@nrwl/react/plugins/bundle-babel",
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [
+              {
+                "glob": "README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "Libraries/Frontend/Components/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": {
+              "configFolder": "Libraries/Frontend/Components/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/Frontend.Components",
+            "config": {
+              "configFolder": "Libraries/Frontend/Components/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      }
+    },
+    "Interfaces.Themes": {
+      "root": "Libraries/Interfaces.Themes",
+      "sourceRoot": "Libraries/Interfaces.Themes/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["Libraries/Interfaces/Themes/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "Libraries/Interfaces/Themes/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/Libraries/Interfaces.Themes",
+            "tsConfig": "Libraries/Interfaces/Themes/tsconfig.lib.json",
+            "packageJson": "Libraries/Interfaces/Themes/package.json",
+            "main": "Libraries/Interfaces/Themes/src/index.ts",
+            "assets": []
+          }
+        }
+      }
     }
   },
   "cli": {
