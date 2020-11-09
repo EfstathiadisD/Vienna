@@ -20,8 +20,7 @@
     "baseUrl": ".",
     "paths": {
       "@vienna/Frontend/Components": ["Libraries/Frontend/Components/src/index.ts"],
-      "@vienna/Interfaces/Themes": ["Libraries/Interfaces/Themes/src/index.ts"],
-      "@vienna/interfaces/themes": ["Libraries/interfaces/themes/src/index.ts"]
+      "@vienna/Interfaces/Themes": ["Libraries/Interfaces/Themes/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

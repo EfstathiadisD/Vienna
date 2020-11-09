@@ -44,10 +44,12 @@
     "@emotion/styled": "10.0.27",
     "document-register-element": "1.13.1",
     "emotion-server": "10.0.27",
+    "emotion-theming": "^10.0.27",
     "next": "9.5.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-router-dom": "5.2.0"
+    "react-router-dom": "5.2.0",
+    "styled-system": "^5.1.5"
   },
   "devDependencies": {
     "@babel/core": "7.9.6",
@@ -66,15 +68,21 @@
     "@nrwl/storybook": "^10.3.2",
     "@nrwl/web": "10.3.2",
     "@nrwl/workspace": "10.3.2",
+    "@storybook/addon-knobs": "^6.0.21",
+    "@storybook/react": "^6.0.21",
+    "@svgr/webpack": "^5.4.0",
     "@testing-library/react": "10.4.1",
     "@types/jest": "26.0.8",
     "@types/node": "~8.9.4",
     "@types/react": "16.9.38",
     "@types/react-dom": "16.9.8",
     "@types/react-router-dom": "5.1.5",
+    "@types/styled-system": "^5.1.10",
+    "@types/webpack": "4.41.21",
     "@typescript-eslint/eslint-plugin": "4.3.0",
     "@typescript-eslint/parser": "4.3.0",
     "babel-jest": "26.2.2",
+    "babel-loader": "8.1.0",
     "dotenv": "6.2.0",
     "eslint": "7.10.0",
     "eslint-config-prettier": "6.0.0",
@@ -89,6 +97,7 @@
     "ts-jest": "26.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
-    "typescript": "~4.0.3"
+    "typescript": "~4.0.3",
+    "url-loader": "^3.0.0"
   }
 }

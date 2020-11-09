@@ -1,15 +1,15 @@
 import React from "react";
-import Text from ".";
+import Box from ".";
 
 import { ThemeProvider } from "emotion-theming";
 import { Main } from "@vienna/Interfaces/Themes";
 
 export default {
-  title: "Text",
+  title: "Box",
 };
 
 export const Basic = () => (
   <ThemeProvider theme={Main}>
-    <Text>This is a Basic Text Component</Text>
+    <Box>This is a Basic Text Component</Box>
   </ThemeProvider>
 );
